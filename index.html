@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper">
+            
+        <div class="front">
+          <p class="letter1">H</p>
+          <p class="letter2">A</p>
+          <p class="letter3">P</p>
+          <p class="letter4">P</p>
+          <p class="letter5">Y</p>
+          <p class="letter6">B</p>
+          <p class="letter7">D</p>
+          <p class="letter8">A</p>
+          <p class="letter9">Y</p>
+          
+          <div class="klik"><p class="klikhier">TOCA AQUI</p></div>
+          
+          <div class="ballon1">
+            <div class="bal1"></div>
+            <div class="frulletje1"></div>
+            <div class="koord1"></div>
+          </div>
+          <div class="ballon2">
+            <div class="bal2"></div>
+            <div class="frulletje2"></div>
+            <div class="koord2"></div>
+          </div>
+          <div class="ballon3">
+            <div class="bal3"></div>
+            <div class="frulletje3"></div>
+            <div class="koord3"></div>
+          </div>
+          
+          
+          <h1>© Shenya Guzman Campos</h1>
+            </div>
+        
+        
+            <div class="back">
+            <h3>Feliz Cumpleaños!</h3>
+            <p class="wens">
+                "Hola aylen, feliz cumpleaños, disfruta mucho 
+                tu bici nueva sigue siendo tan tu"
+            </p>
+          <div class="ballon4">
+            <div class="bal1"></div>
+            <div class="frulletje1"></div>
+            <div class="koord1"></div>
+          </div>
+          
+        </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    /* entire container, keeps perspective */
+.flip-container {
+	perspective: 200em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+	/* flip the pane when hovered */
+	.flip-container:active .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 40em;
+	height: 55em;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+  background-color: oldlace;
+  border: 1px solid antiquewhite;
+  border-left: none;
+}
+
+.ballon1 {
+  position: relative;
+  top: 180px;
+  left: 30px;
+  animation: vlieg 3s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.ballon2 {
+  position: relative;
+  top: 305px;
+  left: 230px;
+  animation: vliegV2 3s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.ballon3 {
+  position: relative;
+  top: -70px;
+  left: 520px;
+  animation: vlieg 3s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.bal1, .bal2, .bal3 {
+   display:block;
+   width: 100px;
+   height: 150px;
+   border-radius: 50%  50%  50%  50%  / 40%  40%  60%   60%;
+}
+
+.bal1 {
+  background-color: #ba7288;
+}
+
+.frulletje1 {
+  border-bottom: 40px solid #ba7288;
+}
+
+.bal2 {
+  background-color: #7b5a6a;
+}
+
+.frulletje2 {
+  border-bottom: 40px solid #7b5a6a;
+}
+
+.bal3 {
+  background-color: palevioletred;
+}
+
+.frulletje3 {
+  border-bottom: 40px solid palevioletred;
+}
+
+.frulletje1, .frulletje2, .frulletje3 {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    position: relative;
+    left: 30px;
+    top: -20px;
+}
+
+.koord1, .koord2, .koord3 {
+    width: 1px;
+    height: 100px;
+    background-color: black;
+    position: relative;
+    top: -22px;
+    left: 50px;
+}
+
+@keyframes vlieg { 
+  0% {
+   transform: translateY(-180px);
+ }
+ 100% {
+   transform: translateY(20px);
+    }
+}
+
+@keyframes vliegV2 { 
+  0% {
+   transform: translateY(-60px);
+ }
+ 100% {
+   transform: translateY(-20px);
+    }
+}
+
+.klik {
+  height: 40px;
+  width: 200px;
+  background-color: antiquewhite;
+  position: relative;
+  top: 430px;
+  left: 522px;
+  transform: rotate(-90deg);
+}
+
+p.klikhier {
+  color: white;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
+.back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+  background-color: oldlace; 
+  border: 1px solid antiquewhite;
+  border-right: none;
+}
+
+.ballon4 {
+  position: relative;
+  top: 20px;
+  left: 270px;
+  animation: vliegV2 3s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.bal4 {
+   display:block;
+   width: 100px;
+   height: 150px;
+   border-radius: 50%  50%  50%  50%  / 40%  40%  60%   60%;
+}
+
+.bal4 {
+  background-color: #ba7288;
+}
+
+.frulletje4 {
+  border-bottom: 40px solid #ba7288;
+}
+
+.koord4 {
+    width: 1px;
+    height: 100px;
+    background-color: black;
+    position: relative;
+    top: -22px;
+    left: 50px;
+}
+
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back {
+	transform: rotateY(180deg);
+}
+
+h1 {
+  font-family: helvetica;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 760px;
+  color: #626262;
+  font-weight: lighter;
+}
+
+p.letter1, .letter2, .letter3, .letter4, .letter5, .letter6, .letter7, .letter8, .letter9 {
+  font-family: helvetica;
+  font-size: 6em;
+  font-weight: 200;
+  line-height: 1em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: #323232;
+  position: absolute;
+}
+
+.letter1 {
+  left: 1.5em;
+  top: 2em;
+  animation-delay: 0.5s;
+  
+}
+
+.letter2 {
+  left: 3em;
+  top: 2em;
+  animation-delay: 1s;
+}
+
+.letter3 {
+  left: 4.5em;
+  top: 2em;
+  animation-delay: 1.5s;
+}
+
+.letter4 {
+  left: 1.5em;
+  top: 3.5em;
+  animation-delay: 2s;
+}
+
+.letter5 {
+  left: 3em;
+  top: 3.5em;
+  animation-delay: 2.5s;
+}
+
+.letter6 {
+  left: 4.5em;
+  top: 3.5em;
+  animation-delay: 3s;
+}
+
+.letter7 {
+  left: 1.5em;
+  top: 5em;
+  animation-delay: 3.5s;
+}
+
+.letter8 {
+  left: 3em;
+  top: 5em;
+  animation-delay: 4s;
+}
+
+.letter9 {
+  left: 4.5em;
+  top: 5em;
+  animation-delay: 4.5s;
+}
+
+.letter1, .letter2, .letter3, .letter4, .letter5, .letter6, .letter7, .letter8, .letter9 {
+  animation-duration: 0.5s;
+  animation-name: verGroot;
+  animation-iteration-count: 1;
+  transition-timing-function: ease-in-out;
+}
+
+
+h3 {
+  font-family: helvetica;
+  font-size: 2em;
+  text-align: center;
+  color: #323232;
+  font-weight: bold;
+  margin-top: 5em;
+  margin-bottom:2em;
+  text-transform: uppercase;
+}
+
+h3:hover {
+  color: gold;
+  transform: scale(1.15);
+}
+
+p.wens {
+  font-family: 'Homemade Apple', cursive;
+  font-size: 1.5em;
+  text-align: center;
+  color: #1F1F1F;
+  font-weight: lighter;
+  width: 80%;
+  margin: auto;
+  line-height: 2em;
+  margin-bottom: 2em;
+ 
+}
+
+@keyframes verGroot {
+  0% {
+    transform: scale(0.1);
+    
+  } 50% {
+    transform: scale(2);
+    
+  } 100% {
+    transform: scale(1);
+     
+  }
+}
+
+</style>
+<script>
+    document.body.style.zoom = 0.5;
+</script>
+</html>
